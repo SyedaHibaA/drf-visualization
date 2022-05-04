@@ -1,3 +1,5 @@
+# WIP
+
 # drf-visualization
 
 Just a simple quick project visualizing the publicly available data from the [DRF (Digital Rights Foundation) Pakistan](https://digitalrightsfoundation.pk/) website.
@@ -25,6 +27,7 @@ Just a simple quick project visualizing the publicly available data from the [DR
 
 #### Data Collection, Cleaning and Annotation Steps
 1. Collected data from [DRF Open Data Initiative](https://digitalrightsfoundation.pk/open-data-for-incidents-of-gender-based-violence-in-pakistan/).
+   a. Fixed spelling mistakes
 2. Converted data into CSV file.
 3. Removed empty rows.
 4. Created documentation of information recorded in file.
