@@ -11,6 +11,8 @@ def victims_by_gender():
 
     x-axis: male, female, transgender
     y-axis: number of cases
+
+    :return: None
     """
     plt.figure(figsize=(15, 10))
     gender_only_df = gender_violence_df[['Gender of Victim', 'Gender of Victim(s)', 'Gender of Victim(s).1', 'Gender of Victim(s).2', 'Gender of Victim(s).3']].copy()
@@ -25,4 +27,25 @@ def victims_by_gender():
     plt.show()
 
 
-victims_by_gender()
+def victims_by_province():
+    """
+    Bar graph of distribution of victims for each province.
+
+    x-axis: KP, Punjab, Sindh, Balochistan, Islamabad
+    y-axis: number of cases
+
+    :return: None
+    """
+
+    plt.figure(figsize=(15, 10))
+    province_only_df = gender_violence_df[["Province"]].copy().dropna()
+    plot = sns.countplot(x="Province", data=province_only_df, order=province_only_df["Province"].value_counts().index)
+    print(province_only_df["Province"].unique())
+
+    for p in plot.patches:
+        plot.annotate('{:1d}'.format(p.get_height()), (p.get_x() + 0.375, p.get_height() + 1))
+
+    plt.show()
+
+
+victims_by_province()
